@@ -1,71 +1,142 @@
 $label-font-color: #4a4a4a;
 $label-font-color-hover: #8dc647;
 
-.header {
+.header-container-fluid {
     border: 2px solid rgb(221, 221, 221);
-    max-width: 1300px;
-    height: 72px;
+    .header-container {
+        max-width: 1300px;
+        height: 72px;
+        padding: 0 15px;
 
-    padding: 0 50px;
+        .header-left {
+            width: calc(100% / 12) * 6;
+            height: 100%;
 
-    .header-left {
-        width: calc(100% / 12) * 7;
-        height: 100%;
-
-        .header-logo {
-            width: 140px;
-            height: 40px;
-        }
-
-        .menu-left-options {
-            width: fit-content;
-            cursor: pointer;
-            position: relative;
-
-            .label {
-                font-size: 14px;
-                color: $label-font-color;
-                font-weight: 500;
+            .header-logo {
+                width: 140px;
+                height: 40px;
             }
 
-            &:hover {
+            .menu-left-options {
+                padding: 5px 10px;
+                width: fit-content;
+                cursor: pointer;
+                position: relative;
+
                 .label {
-                    color: $label-font-color-hover;
+                    font-size: 14px;
+                    color: $label-font-color;
+                    font-weight: 500;
+                }
+
+                &:hover {
+                    .label {
+                        color: $label-font-color-hover;
+                    }
+
+                    .menu-child-options {
+                        display: flex;
+                    }
                 }
 
                 .menu-child-options {
-                    display: flex;
+                    position: absolute;
+                    width: 200px;
+                    z-index: 1000;
+                    margin-top: 3px;
+                    border: 1px solid rgb(221, 221, 221);
+                    border-radius: 5px;
+                    background-color: white;
+                    display: none;
+
+                    .slash {
+                        width: 100%;
+                        border: 1px solid rgb(244, 244, 244);
+                    }
+
+                    .child-option {
+                        font-size: 14px;
+                        width: 100%;
+                        color: $label-font-color;
+                        font-weight: 600;
+                        padding: 6px 12px;
+                        text-align: left;
+                        margin: auto;
+
+                        .new-label {
+                            padding: 2px 8px;
+                            margin-left: 10px;
+                            border-radius: 3px;
+                            background-color: #ddeec8;
+                            color: #8dc648;
+                            font-size: 12px;
+                        }
+
+                        &:hover {
+                            background-color: #f8f9fa;
+                        }
+                    }
+                }
+            }
+        }
+
+        .header-right {
+            width: calc(100% / 12) * 4;
+        }
+
+        .anchor-option {
+            color: #333333;
+            font-size: 14px;
+
+            &:hover {
+                color: $label-font-color-hover;
+            }
+        }
+
+        .header-signup {
+            font-size: 12px;
+            border-radius: 5px;
+            padding: 6px 10px;
+            color: #fff;
+            background-color: $label-font-color-hover;
+            font-weight: 600;
+
+            &:hover {
+                background-color: #69a235;
+            }
+        }
+
+        .header-right-input {
+            position: relative;
+
+
+            input {
+                padding: 10px 12px;
+                border-radius: 5px;
+                font-size: 14px;
+                background-color: #f3f4f6;
+                color: #9ca3af;
+
+                &::placeholder {
+                    padding-left: 16px;
                 }
             }
 
-            .menu-child-options {
+            .icon {
                 position: absolute;
-                width: 200px;
-                z-index: 1000;
-                margin-top: 3px;
-                border: 1px solid rgb(221, 221, 221);
-                border-radius: 5px;
-                background-color: white;
-                display: none;
+                left: 10px;
+                top : 12px;
+                color: #9ca3af;
+            }
 
-                .slash {
-                    width: 100%;
-                    border: 1px solid rgb(244, 244, 244);
+            &:hover {
+                input::placeholder {
+                    color: #6b7280;
                 }
 
-                .child-option {
-                    font-size: 14px;
-                    width: 100%;
-                    color: $label-font-color;
-                    font-weight: 500;
-                    padding: 6px 12px;
-                    text-align: left;
-                    margin: auto;
+                .icon {
 
-
-                    &:hover {
-                        background-color: #f8f9fa;
-                    }
+                    color: #6b7280;
                 }
             }
         }
